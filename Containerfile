@@ -91,7 +91,7 @@ RUN dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 RUN dnf copr enable -y kylegospo/distrobox-utils
 RUN dnf install -y \
         xdg-utils-distrobox \
-        adw-gtk3-theme && \
+        adw-gtk3-theme
 RUN ln -s /usr/bin/distrobox-host-exec /usr/local/bin/flatpak
 RUN ln -s /usr/bin/distrobox-host-exec /usr/local/bin/podman
 
