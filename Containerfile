@@ -87,6 +87,7 @@ RUN dnf install -y \
         coreos-installer \
         highlight \
         just \
+        kitty \
         lsd \
         oci-cli \
         stow \
