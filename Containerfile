@@ -51,7 +51,23 @@ RUN dnf install -y \
         zip \
         mesa-dri-drivers \
         mesa-vulkan-drivers \
-        vulkan
+        vulkan \
+
+# My pacakges
+RUN dnf install -y \
+        ansible \
+        buildah \
+        butane \
+        coreos-installer
+        highlight \
+        just \
+        lsd \
+        oci-cli \
+        stow \
+        tmux \
+        vim \
+        wl-clipboard \
+        zsh \
 
 # Set up dependencies
 RUN git clone https://github.com/89luca89/distrobox.git --single-branch /tmp/distrobox && \
@@ -77,6 +93,9 @@ RUN dnf install -y \
         nvidia-vaapi-driver && \
     dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && \
     dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+
+# cosign
+
 
 # Cleanup
 RUN rm -rf /tmp/*
