@@ -54,32 +54,32 @@ RUN dnf install -y \
         vulkan
 
 # Set up dependencies
-RUN git clone https://github.com/89luca89/distrobox.git --single-branch /tmp/distrobox
-RUN cp /tmp/distrobox/distrobox-host-exec /usr/bin/distrobox-host-exec
-RUN wget https://github.com/1player/host-spawn/releases/download/$(cat /tmp/distrobox/distrobox-host-exec | grep host_spawn_version= | cut -d "\"" -f 2)/host-spawn-$(uname -m) -O /usr/bin/host-spawn
-RUN chmod +x /usr/bin/host-spawn
-RUN rm -drf /tmp/distrobox
-RUN dnf install -y 'dnf-command(copr)'
+RUN git clone https://github.com/89luca89/distrobox.git --single-branch /tmp/distrobox && \
+    cp /tmp/distrobox/distrobox-host-exec /usr/bin/distrobox-host-exec && \
+    wget https://github.com/1player/host-spawn/releases/download/$(cat /tmp/distrobox/distrobox-host-exec | grep host_spawn_version= | cut -d "\"" -f 2)/host-spawn-$(uname -m) -O /usr/bin/host-spawn && \
+    chmod +x /usr/bin/host-spawn && \
+    rm -drf /tmp/distrobox && \
+    dnf install -y 'dnf-command(copr)'
 
 # Install RPMFusion for hardware accelerated encoding/decoding
 RUN dnf install -y \
         https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-        https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-RUN dnf install -y \
+        https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
+    dnf install -y \
         intel-media-driver \
-        nvidia-vaapi-driver
-RUN dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld
-RUN dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+        nvidia-vaapi-driver && \
+    dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && \
+    dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 
 # Set up cleaner Distrobox integration
-RUN dnf copr enable -y kylegospo/distrobox-utils
-RUN dnf install -y \
+RUN dnf copr enable -y kylegospo/distrobox-utils && \
+    dnf install -y \
         xdg-utils-distrobox \
-        adw-gtk3-theme
-RUN ln -s /usr/bin/distrobox-host-exec /usr/local/bin/flatpak
-RUN ln -s /usr/bin/distrobox-host-exec /usr/local/bin/podman
+        adw-gtk3-theme && \
+    ln -s /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
+    ln -s /usr/bin/distrobox-host-exec /usr/local/bin/podman
 
-# My pacakges
+# My packages
 RUN dnf install -y \
         ansible \
         buildah \
