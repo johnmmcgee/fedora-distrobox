@@ -53,22 +53,6 @@ RUN dnf install -y \
         mesa-vulkan-drivers \
         vulkan
 
-# My pacakges
-RUN dnf install -y \
-        ansible \
-        buildah \
-        butane \
-        coreos-installer \
-        highlight \
-        just \
-        lsd \
-        oci-cli \
-        stow \
-        tmux \
-        vim \
-        wl-clipboard \
-        zsh
-
 # Set up dependencies
 RUN git clone https://github.com/89luca89/distrobox.git --single-branch /tmp/distrobox
 RUN cp /tmp/distrobox/distrobox-host-exec /usr/bin/distrobox-host-exec
@@ -94,6 +78,22 @@ RUN dnf install -y \
         adw-gtk3-theme
 RUN ln -s /usr/bin/distrobox-host-exec /usr/local/bin/flatpak
 RUN ln -s /usr/bin/distrobox-host-exec /usr/local/bin/podman
+
+# My pacakges
+RUN dnf install -y \
+        ansible \
+        buildah \
+        butane \
+        coreos-installer \
+        highlight \
+        just \
+        lsd \
+        oci-cli \
+        stow \
+        tmux \
+        vim \
+        wl-clipboard \
+        zsh
 
 # Cleanup
 RUN rm -rf /tmp/*
