@@ -51,14 +51,14 @@ RUN dnf install -y \
         zip \
         mesa-dri-drivers \
         mesa-vulkan-drivers \
-        vulkan \
+        vulkan
 
 # My pacakges
 RUN dnf install -y \
         ansible \
         buildah \
         butane \
-        coreos-installer
+        coreos-installer \
         highlight \
         just \
         lsd \
@@ -67,7 +67,7 @@ RUN dnf install -y \
         tmux \
         vim \
         wl-clipboard \
-        zsh \
+        zsh
 
 # Set up dependencies
 RUN git clone https://github.com/89luca89/distrobox.git --single-branch /tmp/distrobox && \
