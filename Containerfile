@@ -87,8 +87,10 @@ RUN dnf install -y \
         coreos-installer \
         highlight \
         just \
+        jq \
         kitty \
         lsd \
+        nmap \
         oci-cli \
         stow \
         tmux \
