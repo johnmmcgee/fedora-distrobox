@@ -89,8 +89,13 @@ RUN dnf install -y \
         wl-clipboard \
         zsh
 
+# install microsoft VS Code
+RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
+    sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' && \
+    dnf install -y code
+
 # link some things back
-RUN ln -sf /usr/bin/distrobox-host.exec /usr/local/bin/buildah && \
+RUN ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/buildah && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/cosign && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/htop && \
@@ -100,4 +105,5 @@ RUN ln -sf /usr/bin/distrobox-host.exec /usr/local/bin/buildah && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/xdg-open
 
 # Cleanup
-RUN rm -rf /tmp/*
+RUN rm -rf /tmp/* && \
+    dnf clean all
