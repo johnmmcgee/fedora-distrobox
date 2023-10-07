@@ -93,7 +93,10 @@ RUN dnf install -y \
 # link some things back
 RUN ln -sf /usr/bin/distrobox-host.exec /usr/local/bin/buildah && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
+    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/cosign && \
+    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/htop && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/podman && \
+    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/skopeo && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/xdg-open
 
 # Cleanup
