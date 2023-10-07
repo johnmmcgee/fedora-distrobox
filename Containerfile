@@ -71,18 +71,10 @@ RUN dnf install -y \
     dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && \
     dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 
-# Set up cleaner Distrobox integration
-RUN dnf copr enable -y kylegospo/distrobox-utils && \
-    dnf install -y \
-        xdg-utils-distrobox \
-        adw-gtk3-theme && \
-    ln -s /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
-    ln -s /usr/bin/distrobox-host-exec /usr/local/bin/podman
-
 # My packages
 RUN dnf install -y \
+        adw-gtk3-theme
         ansible \
-        buildah \
         butane \
         coreos-installer \
         highlight \
@@ -97,6 +89,12 @@ RUN dnf install -y \
         vim \
         wl-clipboard \
         zsh
+
+# link some things back
+RUN ln -sf /usr/bin/distrobox-host.exec /usr/local/bin/buildah && \
+    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
+    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/podman && \
+    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/xdg-open
 
 # Cleanup
 RUN rm -rf /tmp/*
