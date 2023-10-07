@@ -73,7 +73,7 @@ RUN dnf install -y \
 
 # My packages
 RUN dnf install -y \
-        adw-gtk3-theme
+        adw-gtk3-theme \
         ansible \
         butane \
         coreos-installer \
