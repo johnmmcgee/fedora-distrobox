@@ -71,6 +71,13 @@ RUN dnf install -y \
     dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && \
     dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 
+# Set up cleaner Distrobox integration 
+RUN dnf install -y 'dnf-command(copr)' && \
+    dnf copr enable -y kylegospo/distrobox-utils && \
+    dnf install -y \
+        xdg-utils-distrobox \
+        adw-gtk3-theme 
+
 # My packages
 RUN dnf install -y \
         adw-gtk3-theme \
@@ -101,8 +108,7 @@ RUN ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/buildah && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/htop && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/just && \
     ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/podman && \
-    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/skopeo && \
-    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/xdg-open
+    ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/skopeo 
 
 # Cleanup
 RUN rm -rf /tmp/* && \
