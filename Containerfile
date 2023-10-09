@@ -82,6 +82,7 @@ RUN dnf install -y 'dnf-command(copr)' && \
 RUN dnf install -y \
         adw-gtk3-theme \
         ansible \
+        bind-utils \
         butane \
         coreos-installer \
         highlight \
