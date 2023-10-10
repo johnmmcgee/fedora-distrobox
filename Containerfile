@@ -91,7 +91,9 @@ RUN dnf install -y \
         lsd \
         nmap \
         oci-cli \
+        podman-tui \
         stow \
+        telnet \
         tmux \
         vim \
         wl-clipboard \
