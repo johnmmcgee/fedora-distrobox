@@ -31,6 +31,7 @@ RUN dnf install -y \
         pigz \ 
         pinentry \
         procps-ng \
+        rclone \
         rsync \
         shadow-utils \
         sudo \ 
