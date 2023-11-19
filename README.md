@@ -1,6 +1,6 @@
 # fedora-distrobox
 
-[![build-fedora-distrobox](https://github.com/ublue-os/fedora-distrobox/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/fedora-distrobox/actions/workflows/build.yml) 
+[![build-fedora-distrobox](https://github.com/johnmmcgee/fedora-distrobox/actions/workflows/build.yml/badge.svg)](https://github.com/johnmmcgee/fedora-distrobox/actions/workflows/build.yml) 
 
 Fedora toolbox images modified for the best possible OOTB experience under distrobox
 
