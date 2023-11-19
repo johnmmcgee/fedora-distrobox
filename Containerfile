@@ -31,7 +31,7 @@ RUN dnf install -y \
         pigz \ 
         pinentry \
         procps-ng \
-        samba-client \
+        samba-common-tools \
         rclone \
         rsync \
         shadow-utils \
