@@ -85,7 +85,7 @@ RUN dnf install -y \
         adw-gtk3-theme \
         ansible \
         bind-utils \
-        borg \
+        borgbackup \
         butane \
         coreos-installer \
         highlight \
