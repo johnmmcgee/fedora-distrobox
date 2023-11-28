@@ -86,6 +86,7 @@ RUN dnf install -y \
         ansible \
         bind-utils \
         borgbackup \
+        borgmatic \
         butane \
         coreos-installer \
         highlight \
