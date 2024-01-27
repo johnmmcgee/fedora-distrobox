@@ -25,6 +25,7 @@ RUN dnf install -y \
         mtr \
         ncurses \
         nss-mdns \
+        openldap-clients \
         openssh-clients \
         pam \ 
         passwd \
@@ -32,7 +33,6 @@ RUN dnf install -y \
         pinentry \
         procps-ng \
         samba-common-tools \
-        rclone \
         rsync \
         shadow-utils \
         sudo \ 
@@ -96,6 +96,7 @@ RUN dnf install -y \
         nmap \
         oci-cli \
         podman-tui \
+        rclone \
         stow \
         telnet \
         tmux \
