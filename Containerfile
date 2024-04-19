@@ -87,17 +87,23 @@ RUN dnf install -y \
         bind-utils \
         borgbackup \
         borgmatic \
+        buildah \
         butane \
         coreos-installer \
         highlight \
+        iperf3 \
         jq \
         kitty \
         lsd \
+        netcat \
         nmap \
         oci-cli \
         podman-tui \
+        powertop \
         rclone \
         stow \
+        strace \
+        tealdear \
         telnet \
         tmux \
         vim \
