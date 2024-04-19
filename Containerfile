@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora-toolbox:39 AS fedora-distrobox
+FROM registry.fedoraproject.org/fedora-toolbox:40 AS fedora-distrobox
 
 # Install packages required by Distrobox, this speeds up the first-run time
 RUN dnf install -y \
@@ -87,7 +87,6 @@ RUN dnf install -y \
         bind-utils \
         borgbackup \
         borgmatic \
-        buildah \
         butane \
         coreos-installer \
         highlight \
@@ -99,7 +98,6 @@ RUN dnf install -y \
         nmap \
         oci-cli \
         podman-tui \
-        powertop \
         rclone \
         stow \
         strace \
