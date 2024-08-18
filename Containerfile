@@ -98,6 +98,7 @@ RUN dnf install -y \
         nmap \
         oci-cli \
         podman-tui \
+        powertop \
         rclone \
         stow \
         strace \
