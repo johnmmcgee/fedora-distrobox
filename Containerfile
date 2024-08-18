@@ -102,7 +102,7 @@ RUN dnf install -y \
         rclone \
         stow \
         strace \
-        tealdear \
+        tealdeer \
         telnet \
         tmux \
         vim \
