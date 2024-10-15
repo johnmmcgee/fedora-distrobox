@@ -80,6 +80,10 @@ RUN dnf install -y 'dnf-command(copr)' && \
         xdg-utils-distrobox \
         adw-gtk3-theme 
 
+# install kanidm
+RUN dnf copr enable jbcrawford/kanidm && \
+    dnf install -y kanidm
+
 # My packages
 RUN dnf install -y \
         adw-gtk3-theme \
