@@ -81,8 +81,8 @@ RUN dnf install -y 'dnf-command(copr)' && \
         adw-gtk3-theme 
 
 # install kanidm
-RUN dnf copr enable jbcrawford/kanidm && \
-    dnf install -y kanidm
+#RUN dnf copr enable jbcrawford/kanidm && \
+#    dnf install -y kanidm
 
 # My packages
 RUN dnf install -y \
